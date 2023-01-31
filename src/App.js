@@ -10,16 +10,53 @@ class App extends React.Component {
     atributo2: '',
     atributo3: '',
     imagem: '',
-    raridade: '',
+    raridade: 'Normal',
+    isSaveButtonDisabled: true,
     superTrybe: false,
+  };
+
+  validateInput = () => {
+    this.setState((state) => {
+      const { nome,
+        descricao,
+        imagem,
+        raridade,
+        atributo1,
+        atributo2,
+        atributo3 } = state;
+
+      const value = 210;
+      const limite = 90;
+      const newatributo1 = parseInt(atributo1, 10);
+      const newAtributo2 = parseInt(atributo2, 10);
+      const newAtributo3 = parseInt(atributo3, 10);
+      const validNome = nome.length !== 0;
+      const validDescricao = descricao.length !== 0;
+      const validImagem = imagem.length !== 0;
+      const validRaridade = raridade.length !== 0;
+      const validSoma = (newatributo1 + newAtributo2 + newAtributo3) <= value;
+      const validatributo1 = newatributo1 <= limite && newatributo1 >= 0;
+      const validatributo2 = newAtributo2 <= limite && newAtributo2 >= 0;
+      const validatributo3 = newAtributo3 <= limite && newAtributo3 >= 0;
+
+      return {
+        isSaveButtonDisabled: !(validNome
+          && validDescricao
+          && validImagem
+          && validRaridade
+          && validSoma
+          && validatributo1
+          && validatributo2
+          && validatributo3),
+      };
+    });
   };
 
   onInputChange = ({ target }) => {
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
-      [name]: value,
-    });
+      [name]: value }, this.validateInput);
   };
 
   onSaveButtonClick = () => {
@@ -34,6 +71,7 @@ class App extends React.Component {
       atributo3,
       imagem,
       raridade,
+      isSaveButtonDisabled,
       superTrybe } = this.state;
     return (
       <div>
@@ -47,8 +85,8 @@ class App extends React.Component {
           cardAttr3={ atributo3 }
           cardImage={ imagem }
           cardRare={ raridade }
+          isSaveButtonDisabled={ isSaveButtonDisabled }
           cardTrunfo={ superTrybe }
-          isSaveButtonDisabled="true"
           onSaveButtonClick={ this.onSaveButtonClick }
         />
         <Card
