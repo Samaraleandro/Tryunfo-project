@@ -95,33 +95,57 @@ class App extends React.Component {
       imagem,
       raridade,
       isSaveButtonDisabled,
-      superTrybe } = this.state;
+      superTrybe,
+      cards } = this.state;
     return (
       <div>
-        <h1>ADICIONE NOVA CARTA</h1>
-        <Form
-          onInputChange={ this.onInputChange }
-          cardName={ nome }
-          cardDescription={ descricao }
-          cardAttr1={ atributo1 }
-          cardAttr2={ atributo2 }
-          cardAttr3={ atributo3 }
-          cardImage={ imagem }
-          cardRare={ raridade }
-          isSaveButtonDisabled={ isSaveButtonDisabled }
-          cardTrunfo={ superTrybe }
-          onSaveButtonClick={ this.onSaveButtonClick }
-        />
-        <Card
-          cardName={ nome }
-          cardDescription={ descricao }
-          cardAttr1={ atributo1 }
-          cardAttr2={ atributo2 }
-          cardAttr3={ atributo3 }
-          cardImage={ imagem }
-          cardRare={ raridade }
-          cardTrunfo={ superTrybe }
-        />
+        <section>
+          <h1>ADICIONE NOVA CARTA</h1>
+          <Form
+            onInputChange={ this.onInputChange }
+            cardName={ nome }
+            cardDescription={ descricao }
+            cardAttr1={ atributo1 }
+            cardAttr2={ atributo2 }
+            cardAttr3={ atributo3 }
+            cardImage={ imagem }
+            cardRare={ raridade }
+            isSaveButtonDisabled={ isSaveButtonDisabled }
+            cardTrunfo={ superTrybe }
+            onSaveButtonClick={ this.onSaveButtonClick }
+          />
+        </section>
+        <section>
+          <Card
+            cardName={ nome }
+            cardDescription={ descricao }
+            cardAttr1={ atributo1 }
+            cardAttr2={ atributo2 }
+            cardAttr3={ atributo3 }
+            cardImage={ imagem }
+            cardRare={ raridade }
+            cardTrunfo={ superTrybe }
+          />
+        </section>
+        <section>
+          <h1>Todas as cartas</h1>
+          {
+            cards.map((card) => (
+              <div key={ card.nome }>
+                <div>
+                  <Card
+                    cardName={ card.nome }
+                    cardDescription={ card.descricao }
+                    cardAttr1={ card.atributo1 }
+                    cardAttr2={ card.atributo2 }
+                    cardAttr3={ card.atributo3 }
+                    cardRare={ card.raridade }
+                  />
+                </div>
+              </div>
+            ))
+          }
+        </section>
       </div>
     );
   }
