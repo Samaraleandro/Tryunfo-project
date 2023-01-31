@@ -6,13 +6,14 @@ class App extends React.Component {
   state = {
     nome: '',
     descricao: '',
-    atributo1: '',
-    atributo2: '',
-    atributo3: '',
+    atributo1: 0,
+    atributo2: 0,
+    atributo3: 0,
     imagem: '',
     raridade: 'Normal',
     isSaveButtonDisabled: true,
     superTrybe: false,
+    cards: [],
   };
 
   validateInput = () => {
@@ -60,7 +61,29 @@ class App extends React.Component {
   };
 
   onSaveButtonClick = () => {
+    this.setState((state) => {
+      const { nome,
+        descricao,
+        atributo1,
+        atributo2,
+        atributo3,
+        imagem,
+        raridade,
+        cards } = state;
+      const card = { nome, descricao, atributo1, atributo2, atributo3, imagem, raridade };
 
+      return {
+        cards: [...cards, card],
+        nome: '',
+        descricao: '',
+        atributo1: 0,
+        atributo2: 0,
+        atributo3: 0,
+        imagem: '',
+        raridade: 'Normal',
+        isSaveButtonDisabled: true,
+      };
+    });
   };
 
   render() {
