@@ -13,19 +13,20 @@ class App extends React.Component {
     raridade: 'Normal',
     isSaveButtonDisabled: true,
     superTrybe: false,
-    hasTrunfo: true,
+    hasTrunfo: false,
     cards: [],
   };
 
-  validTrunfo = () => {
+  /*   validTrunfo = () => {
     this.setState((state) => {
       const { superTrybe } = state;
-      const validate = superTrybe === true;
+      const validate = (superTrybe === true);
       return {
-        hasTrunfo: !validate,
+        hasTrunfo: validate,
+        superTrybe: !validate,
       };
     });
-  };
+  }; */
 
   validateInput = () => {
     this.setState((state) => {
@@ -81,6 +82,7 @@ class App extends React.Component {
         atributo3,
         imagem,
         raridade,
+        superTrybe,
         cards } = state;
       const card = { nome,
         descricao,
@@ -89,6 +91,7 @@ class App extends React.Component {
         atributo3,
         imagem,
         raridade,
+        superTrybe,
       };
 
       return {
@@ -100,9 +103,10 @@ class App extends React.Component {
         atributo3: 0,
         imagem: '',
         raridade: 'Normal',
+        superTrybe: false,
         isSaveButtonDisabled: true,
       };
-    }, this.validTrunfo);
+    });
   };
 
   render() {
@@ -161,6 +165,7 @@ class App extends React.Component {
                     cardAttr2={ card.atributo2 }
                     cardAttr3={ card.atributo3 }
                     cardRare={ card.raridade }
+                    cardTrunfo={ card.superTrybe }
                   />
                 </div>
               </div>
