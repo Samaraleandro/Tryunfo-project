@@ -13,7 +13,18 @@ class App extends React.Component {
     raridade: 'Normal',
     isSaveButtonDisabled: true,
     superTrybe: false,
+    hasTrunfo: true,
     cards: [],
+  };
+
+  validTrunfo = () => {
+    this.setState((state) => {
+      const { superTrybe } = state;
+      const validate = superTrybe === true;
+      return {
+        hasTrunfo: !validate,
+      };
+    });
   };
 
   validateInput = () => {
@@ -57,7 +68,8 @@ class App extends React.Component {
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
-      [name]: value }, this.validateInput);
+      [name]: value,
+    }, this.validateInput);
   };
 
   onSaveButtonClick = () => {
@@ -70,7 +82,14 @@ class App extends React.Component {
         imagem,
         raridade,
         cards } = state;
-      const card = { nome, descricao, atributo1, atributo2, atributo3, imagem, raridade };
+      const card = { nome,
+        descricao,
+        atributo1,
+        atributo2,
+        atributo3,
+        imagem,
+        raridade,
+      };
 
       return {
         cards: [...cards, card],
@@ -83,7 +102,7 @@ class App extends React.Component {
         raridade: 'Normal',
         isSaveButtonDisabled: true,
       };
-    });
+    }, this.validTrunfo);
   };
 
   render() {
@@ -96,6 +115,7 @@ class App extends React.Component {
       raridade,
       isSaveButtonDisabled,
       superTrybe,
+      hasTrunfo,
       cards } = this.state;
     return (
       <div>
@@ -112,6 +132,7 @@ class App extends React.Component {
             cardRare={ raridade }
             isSaveButtonDisabled={ isSaveButtonDisabled }
             cardTrunfo={ superTrybe }
+            hasTrunfo={ hasTrunfo }
             onSaveButtonClick={ this.onSaveButtonClick }
           />
         </section>
