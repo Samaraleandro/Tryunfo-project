@@ -6,9 +6,9 @@ class App extends React.Component {
   state = {
     nome: '',
     descricao: '',
-    atributo1: 0,
-    atributo2: 0,
-    atributo3: 0,
+    atributo1: '',
+    atributo2: '',
+    atributo3: '',
     imagem: '',
     raridade: 'Normal',
     isSaveButtonDisabled: true,
@@ -16,17 +16,6 @@ class App extends React.Component {
     hasTrunfo: false,
     cards: [],
   };
-
-  /*   validTrunfo = () => {
-    this.setState((state) => {
-      const { superTrybe } = state;
-      const validate = (superTrybe === true);
-      return {
-        hasTrunfo: validate,
-        superTrybe: !validate,
-      };
-    });
-  }; */
 
   validateInput = () => {
     this.setState((state) => {
@@ -106,6 +95,22 @@ class App extends React.Component {
         superTrybe: false,
         isSaveButtonDisabled: true,
       };
+    }, this.validTrunfo);
+  };
+
+  removeList = (idButton) => {
+    const { cards } = this.state;
+    const filter = cards.filter((_card, index) => index !== idButton);
+    this.setState({
+      cards: filter,
+    });
+  };
+
+  validTrunfo = () => {
+    const { cards } = this.state;
+    const find = cards.find((card) => card.superTrybe === true);
+    this.setState({
+      hasTrunfo: find,
     });
   };
 
@@ -155,7 +160,7 @@ class App extends React.Component {
         <section>
           <h1>Todas as cartas</h1>
           {
-            cards.map((card) => (
+            cards.map((card, index) => (
               <div key={ card.nome }>
                 <div>
                   <Card
@@ -164,9 +169,16 @@ class App extends React.Component {
                     cardAttr1={ card.atributo1 }
                     cardAttr2={ card.atributo2 }
                     cardAttr3={ card.atributo3 }
+                    cardImage={ card.imagem }
                     cardRare={ card.raridade }
                     cardTrunfo={ card.superTrybe }
                   />
+                  <button
+                    data-testid="delete-button"
+                    onClick={ () => this.removeList(index) }
+                  >
+                    Excluir
+                  </button>
                 </div>
               </div>
             ))
