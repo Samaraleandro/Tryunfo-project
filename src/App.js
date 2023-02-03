@@ -6,9 +6,9 @@ class App extends React.Component {
   state = {
     nome: '',
     descricao: '',
-    atributo1: '',
-    atributo2: '',
-    atributo3: '',
+    atributo1: 0,
+    atributo2: 0,
+    atributo3: 0,
     imagem: '',
     raridade: 'Normal',
     isSaveButtonDisabled: true,
@@ -103,7 +103,7 @@ class App extends React.Component {
     const filter = cards.filter((_card, index) => index !== idButton);
     this.setState({
       cards: filter,
-    });
+    }, this.validTrunfo);
   };
 
   validTrunfo = () => {
@@ -173,13 +173,13 @@ class App extends React.Component {
                     cardRare={ card.raridade }
                     cardTrunfo={ card.superTrybe }
                   />
-                  <button
-                    data-testid="delete-button"
-                    onClick={ () => this.removeList(index) }
-                  >
-                    Excluir
-                  </button>
                 </div>
+                <button
+                  data-testid="delete-button"
+                  onClick={ () => this.removeList(index) }
+                >
+                  Excluir
+                </button>
               </div>
             ))
           }
