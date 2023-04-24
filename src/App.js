@@ -1,6 +1,8 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import Logo from './logo_tryunfo.png';
+import './App.css';
 
 class App extends React.Component {
   state = {
@@ -128,36 +130,41 @@ class App extends React.Component {
       cards } = this.state;
     return (
       <div>
-        <section>
-          <h1>ADICIONE NOVA CARTA</h1>
-          <Form
-            onInputChange={ this.onInputChange }
-            cardName={ nome }
-            cardDescription={ descricao }
-            cardAttr1={ atributo1 }
-            cardAttr2={ atributo2 }
-            cardAttr3={ atributo3 }
-            cardImage={ imagem }
-            cardRare={ raridade }
-            isSaveButtonDisabled={ isSaveButtonDisabled }
-            cardTrunfo={ superTrybe }
-            hasTrunfo={ hasTrunfo }
-            onSaveButtonClick={ this.onSaveButtonClick }
-          />
-        </section>
-        <section>
-          <Card
-            cardName={ nome }
-            cardDescription={ descricao }
-            cardAttr1={ atributo1 }
-            cardAttr2={ atributo2 }
-            cardAttr3={ atributo3 }
-            cardImage={ imagem }
-            cardRare={ raridade }
-            cardTrunfo={ superTrybe }
-          />
-        </section>
-        <section>
+        <header>
+          <img src={ Logo } alt="logo" />
+        </header>
+        <div className="addNewCard">
+          <section>
+            <h1>ADICIONE NOVA CARTA</h1>
+            <Form
+              onInputChange={ this.onInputChange }
+              cardName={ nome }
+              cardDescription={ descricao }
+              cardAttr1={ atributo1 }
+              cardAttr2={ atributo2 }
+              cardAttr3={ atributo3 }
+              cardImage={ imagem }
+              cardRare={ raridade }
+              isSaveButtonDisabled={ isSaveButtonDisabled }
+              cardTrunfo={ superTrybe }
+              hasTrunfo={ hasTrunfo }
+              onSaveButtonClick={ this.onSaveButtonClick }
+            />
+          </section>
+          <section className="preView">
+            <Card
+              cardName={ nome }
+              cardDescription={ descricao }
+              cardAttr1={ atributo1 }
+              cardAttr2={ atributo2 }
+              cardAttr3={ atributo3 }
+              cardImage={ imagem }
+              cardRare={ raridade }
+              cardTrunfo={ superTrybe }
+            />
+          </section>
+        </div>
+        <section className="allCards">
           <h1>Todas as cartas</h1>
           {
             cards.map((card, index) => (

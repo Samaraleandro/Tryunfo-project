@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,200;1,200&family=Open+Sans:wght@300&display=swap');
+
+body {
+position: relative;
+width: 1280px;
+height: 3578px;
+background-color: #052727;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.addNewCard {
+position: absolute;
+width: 1124px;
+height: 721px;
+left: 78px;
+top: 473px;
+
+background: #FFFFFF;
+box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.8);
+border-radius: 20px;
+}
+
+.addNewCard h1 {
+position: absolute;
+width: 355px;
+height: 36px;
+position: absolute;
+width: 355px;
+height: 36px;
+left: 30px;
+top: 20px;
+font-family: 'Epilogue';
+font-style: italic;
+font-weight: 800;
+font-size: 28px;
+line-height: 29px;
+text-transform: uppercase;
+
+color: #2FC18C;
+
+font-family: 'Epilogue';
+font-style: italic;
+font-weight: 800;
+font-size: 28px;
+line-height: 29px;
+text-transform: uppercase;
+color: #2FC18C;
+
+}
+
+.preView {
+position: absolute;
+width: 358.17px;
+height: 611.33px;
+left: 700px;
+top: 70px;
+
+}
+
+.allCards {
+position: absolute;
+left: 462px;
+top: 1291px;
+
+}

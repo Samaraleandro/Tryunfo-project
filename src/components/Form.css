@@ -1,0 +1,114 @@
+.form {
+position: absolute;
+width: 404px;
+height: 593px;
+left: 78px;
+top: 80px;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+}
+
+.form label {
+font-family: 'Verdana';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 150%;
+color: #3D495C;
+}
+
+#name-input {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+align-items: center;
+padding: 0px;
+position: absolute;
+width: 310px;
+height: 25px;
+left: 50px;
+top: 0px;
+background: #FFFFFF;
+}
+
+#description-input {
+  width: 365px;
+  height: 80px;
+}
+
+#attr1-input {
+position: absolute;
+width: 275px;
+height: 30px;
+box-sizing: border-box;
+left: 60px;
+background: #FFFFFF;
+border: 1px solid #29313D;
+border-radius: 2px;
+}
+
+#attr2-input {
+box-sizing: border-box;
+position: absolute;
+width: 275px;
+height: 30px;
+left: 60px;
+background: #FFFFFF;
+border: 1px solid #29313D;
+border-radius: 2px;
+}
+
+#attr3-input {
+box-sizing: border-box;
+position: absolute;
+width: 275px;
+height: 30px;
+left: 60px;
+background: #FFFFFF;
+border: 1px solid #29313D;
+border-radius: 2px;
+}
+
+#image-input {
+box-sizing: border-box;
+position: absolute;
+width: 275px;
+height: 30px;
+left: 60px;
+background: #FFFFFF;
+border: 1px solid #023031;
+border-radius: 2px;
+}
+
+#rare-input {
+position: absolute;
+background: #FFFFFF;
+left: 70px;
+width: 265px;
+height: 35px;
+}
+
+#trunfo-input {
+width: 20px;
+height: 15px;
+}
+
+#save-button {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 8px 32px;
+gap: 10px;
+
+width: 115px;
+height: 40px;
+
+background: #2FC18C;
+border-radius: 2px;
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
