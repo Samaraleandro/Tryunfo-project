@@ -166,30 +166,32 @@ class App extends React.Component {
         </div>
         <section className="allCards">
           <h1>Todas as cartas</h1>
-          {
-            cards.map((card, index) => (
-              <div key={ card.nome }>
-                <div>
-                  <Card
-                    cardName={ card.nome }
-                    cardDescription={ card.descricao }
-                    cardAttr1={ card.atributo1 }
-                    cardAttr2={ card.atributo2 }
-                    cardAttr3={ card.atributo3 }
-                    cardImage={ card.imagem }
-                    cardRare={ card.raridade }
-                    cardTrunfo={ card.superTrybe }
-                  />
+          <div className="div-cards">
+            {
+              cards.map((card, index) => (
+                <div className="card-button" key={ card.nome }>
+                  <div>
+                    <Card
+                      cardName={ card.nome }
+                      cardDescription={ card.descricao }
+                      cardAttr1={ card.atributo1 }
+                      cardAttr2={ card.atributo2 }
+                      cardAttr3={ card.atributo3 }
+                      cardImage={ card.imagem }
+                      cardRare={ card.raridade }
+                      cardTrunfo={ card.superTrybe }
+                    />
+                  </div>
+                  <button
+                    data-testid="delete-button"
+                    onClick={ () => this.removeList(index) }
+                  >
+                    Excluir
+                  </button>
                 </div>
-                <button
-                  data-testid="delete-button"
-                  onClick={ () => this.removeList(index) }
-                >
-                  Excluir
-                </button>
-              </div>
-            ))
-          }
+              ))
+            }
+          </div>
         </section>
       </div>
     );

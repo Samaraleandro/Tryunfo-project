@@ -1,59 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,200;1,200&family=Open+Sans:wght@300&display=swap');
 
 .card {
-position: absolute;
-width: 358.17px;
-height: 500px;
-left: 5px;
-top: 2px;
-background: #036B52;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-font-family: 'Epilogue';
-font-style: normal;
-font-weight: 600;
-font-size: 15.5724px;
-line-height: 150%;
-color: #3D495C;
+  background: #0c9777;
+  color: #3d495c;
+  display: flex;
+  flex-direction: column;
+  font-family: Epilogue;
+  font-size: 15.5724px;
+  font-style: normal;
+  font-weight: 600;
+  height: 500px;
+  justify-content: space-around;
+  left: 5px;
+  line-height: 150%;
+  top: 2px;
+  width: 358.17px;
 }
 
 #name-card {
-display: flex;
-justify-content: center;
-align-items: center;
-width: 300px;
-height: 38.93px;
-margin-left: auto;
-margin-right: auto;
-background-color:#FFFFFF;
-border-radius: 10px;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  height: 38.93px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
 }
 
 img {
-border: 1px #023031 solid;
-width: 300px;
-height: 150px;
-margin-left: 28px;
-top: 632.23px;
+  height: 150px;
+  margin-left: 28px;
+  top: 632.23px;
+  width: 300px;
 }
 
 #description-card {
+  color: #0d1016;
   margin-left: 28px;
-  color:#0d1016;
 }
 
 .atributos {
-width: 300px;
-height: 160px;
-margin-left: auto;
-margin-right: auto;
-background-color:#FFFFFF;
-color: #3D495C;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-border-radius: 15px;
+  background-color: #fff;
+  border-radius: 15px;
+  color: #3d495c;
+  display: flex;
+  flex-direction: column;
+  height: 160px;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
 }
 
 #attr1-card, #attr2-card, #attr3-card, #rare-card, #trunfo-card {

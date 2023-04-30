@@ -1,114 +1,111 @@
 .form {
-position: absolute;
-width: 404px;
-height: 593px;
-left: 78px;
-top: 80px;
-display: flex;
-flex-direction: column;
-flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 593px;
+  left: 78px;
+  position: absolute;
+  top: 80px;
+  width: 404px;
 }
 
 .form label {
-font-family: 'Verdana';
-font-style: normal;
-font-weight: 700;
-font-size: 16px;
-line-height: 150%;
-color: #3D495C;
+  color: #3d495c;
+  font-family: Verdana;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
 }
 
 #name-input {
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-align-items: center;
-padding: 0px;
-position: absolute;
-width: 310px;
-height: 25px;
-left: 50px;
-top: 0px;
-background: #FFFFFF;
+  align-items: center;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 25px;
+  left: 50px;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 310px;
 }
 
 #description-input {
-  width: 365px;
   height: 80px;
+  width: 365px;
 }
 
 #attr1-input {
-position: absolute;
-width: 275px;
-height: 30px;
-box-sizing: border-box;
-left: 60px;
-background: #FFFFFF;
-border: 1px solid #29313D;
-border-radius: 2px;
+  background: #fff;
+  border: 1px solid #29313d;
+  border-radius: 2px;
+  box-sizing: border-box;
+  height: 30px;
+  left: 60px;
+  position: absolute;
+  width: 275px;
 }
 
 #attr2-input {
-box-sizing: border-box;
-position: absolute;
-width: 275px;
-height: 30px;
-left: 60px;
-background: #FFFFFF;
-border: 1px solid #29313D;
-border-radius: 2px;
+  background: #fff;
+  border: 1px solid #29313d;
+  border-radius: 2px;
+  box-sizing: border-box;
+  height: 30px;
+  left: 60px;
+  position: absolute;
+  width: 275px;
 }
 
 #attr3-input {
-box-sizing: border-box;
-position: absolute;
-width: 275px;
-height: 30px;
-left: 60px;
-background: #FFFFFF;
-border: 1px solid #29313D;
-border-radius: 2px;
+  background: #fff;
+  border: 1px solid #29313d;
+  border-radius: 2px;
+  box-sizing: border-box;
+  height: 30px;
+  left: 60px;
+  position: absolute;
+  width: 275px;
 }
 
 #image-input {
-box-sizing: border-box;
-position: absolute;
-width: 275px;
-height: 30px;
-left: 60px;
-background: #FFFFFF;
-border: 1px solid #023031;
-border-radius: 2px;
+  background: #fff;
+  border: 1px solid #023031;
+  border-radius: 2px;
+  box-sizing: border-box;
+  height: 30px;
+  left: 60px;
+  position: absolute;
+  width: 275px;
 }
 
 #rare-input {
-position: absolute;
-background: #FFFFFF;
-left: 70px;
-width: 265px;
-height: 35px;
+  background: #fff;
+  height: 35px;
+  left: 70px;
+  position: absolute;
+  width: 265px;
 }
 
 #trunfo-input {
-width: 20px;
-height: 15px;
+  height: 15px;
+  width: 20px;
 }
 
 #save-button {
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 8px 32px;
-gap: 10px;
-
-width: 115px;
-height: 40px;
-
-background: #2FC18C;
-border-radius: 2px;
-
-flex: none;
-order: 0;
-flex-grow: 0;
+  align-items: center;
+  background: #2fc18c;
+  border-radius: 2px;
+  display: flex;
+  flex: none;
+  flex-direction: row;
+  flex-grow: 0;
+  gap: 10px;
+  height: 40px;
+  justify-content: center;
+  order: 0;
+  padding: 8px 32px;
+  width: 115px;
 }
